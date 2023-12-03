@@ -31,9 +31,11 @@ A third fragment maps the `customer_id` to the `card_id`.
 Sends the mappings to Server 2, the sensitive data to Server 3, and the non-sensitive
 data to Server 4.
 
+`-e`: accept encrypted data from user
+
 To execute, run command:
 ```
-python3 server1.py
+python3 server1.py [-e]
 ```
 
 ### Servers 2-4
