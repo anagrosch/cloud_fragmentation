@@ -1,6 +1,5 @@
 #   File run on user interacting with cloud
 
-from ctypes import sizeof
 from socket import *
 from gm_cryptosystem import *
 import argparse

@@ -1,4 +1,3 @@
-import re
 from socket import *
 import random
 import ast
