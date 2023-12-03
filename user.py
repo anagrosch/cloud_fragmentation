@@ -52,8 +52,6 @@ def encrypt_input(data):
     for index in range(len(data)):
         data[index] = encrypt(data[index], c1_keys['pub'])
     
-    #print("after:\t{i}\n".format(i=data))
-    
     return c1_keys, str(data)
 
 

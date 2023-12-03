@@ -81,20 +81,6 @@ def recv_data(server, port):
     soc.listen(1)
     print('Listening for connection...')
 
-    """
-    while True:
-        try:
-            connection, sender = soc.accept()
-            print("New connection from client: {client}".format(client=sender))
-
-            data = connection.recv(4098).decode()
-            connection.close()
-            return ast.literal_eval(data)                               #convert string to list
-
-        except:
-            soc.close()
-    """
-    
     connection, customer = soc.accept()
     print("New connection from client: {client}".format(client=customer))
     socket_thread = SocketThread(connection=connection, client_info=customer, buffer_size=1024, recv_timeout=5)
