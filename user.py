@@ -5,6 +5,7 @@ from socket import *
 from gm_cryptosystem import *
 import argparse
 import ast
+import time
 
 SERVER1 = "172.18.12.189"
 
@@ -31,10 +32,9 @@ def client_send(data):
     clientSocket = socket(AF_INET, SOCK_STREAM)
     clientSocket.connect((SERVER1, 10800))
     print('Connected to server.')
-
+    time.sleep(1)
     clientSocket.sendall(data.encode('utf-8'))
     print("{data} sent.".format(data=data))
-    print(len(data))
     clientSocket.close()
 
 
