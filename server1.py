@@ -33,7 +33,6 @@ class SocketThread(threading.Thread):
 
             if received_data != None:
                 self.full_data = received_data
-                print('full = ', self.full_data)
 
             if status == 0:
                 self.connection.close()
@@ -89,8 +88,7 @@ def server_get():
     socket_thread = SocketThread(connection=connection, client_info=customer, buffer_size=1024, recv_timeout=5)
     socket_thread.start()
     
-    while (len(socket_thread.full_data) <= 0):
-        time.sleep(1)
+    socket_thread.join()
     return socket_thread.full_data
     
 
